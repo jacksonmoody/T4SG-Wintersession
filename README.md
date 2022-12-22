@@ -4,7 +4,7 @@ Welcome! This is the repository that we will use to store and collaborate on all
 
 ## Getting Started
 
-1. On GitHub.com, navigate to the main page of this repository. Above the list of files, click the green "Code" button.
+1. On [github.com](https://github.com/jacksonmoody/T4SG-Wintersession), navigate to the main page of this repository. Above the list of files, click the green "Code" button.
 2. Click the clipboard icon next to the URL shown under the HTTPS section.
 3. Open the terminal on your computer
 4. Type `git clone` and then paste the URL copied earlier
@@ -19,4 +19,4 @@ Welcome! This is the repository that we will use to store and collaborate on all
 Runs the app in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.
