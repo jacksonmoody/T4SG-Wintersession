@@ -1,8 +1,7 @@
 import {initializeApp} from "firebase/app"
-
 import { GoogleAuthProvider, getAuth, signInWithRedirect, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile} from "firebase/auth";
-
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
+import { addUser } from "./database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDP9JcuVgF-O0-_lnMiSed28l0OKPgWJ54",
@@ -41,16 +40,11 @@ async function registerWithEmailAndPassword(name, email, password){
    try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
       const user = res.user;
-      await addDoc(collection(db, "users"), {
-         uid: user.uid,
-         name,
-         authProvider: "local",
-         email,
-      });
+      await addUser(user.uid, name, "local", email);
       await updateProfile(auth.currentUser, { displayName: name })
    } catch (err) {
       console.error(err);
-      //alert("Error with registration. Please enter a valid email and password and try again.");
+      alert("Error with registration. Please enter a new email and password and try again.");
    }
 }
 
