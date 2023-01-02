@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import { Button } from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import {auth} from "../firebase";
+import {auth} from "../helpers/firebase";
 import { Outlet, useNavigate } from 'react-router-dom';
 
 function Layout(props) {

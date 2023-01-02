@@ -5,7 +5,7 @@ import Results from "./pages/Results";
 import ErrorPage from "./pages/ErrorPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import { auth, db } from "./firebase";
+import { auth, db } from "./helpers/firebase";
 import { query, getDocs, collection, where, addDoc } from "firebase/firestore";
 import { onAuthStateChanged, getRedirectResult } from "firebase/auth";
 import { useState, useEffect } from "react";
