@@ -1,4 +1,4 @@
-function example() {
+function Example() {
     return (
         <div>
             <p>This is an example component</p>
@@ -6,4 +6,4 @@ function example() {
     );
 }
 
-export default example;
+export default Example;
