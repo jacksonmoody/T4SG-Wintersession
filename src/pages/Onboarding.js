@@ -20,9 +20,17 @@ function Onboarding(props) {
     const [successAlert, setSuccessAlert] = useState(false);
     const navigate = useNavigate();
 
-    if (!props.users || !props.currentUser) return null;
-    const users = props.users.filter((user) => (user.uid === props.currentUser.uid));
-    const user = users[0];
+    let users;
+    let user;
+    let name;
+
+    try {
+        users = props.users.filter((user) => (user.uid === props.currentUser.uid));
+        user = users[0];
+        name = user.name;
+    } catch(e) {
+        return null;
+    }
 
     async function finish_onboarding(e) {
         e.preventDefault();
@@ -46,7 +54,7 @@ function Onboarding(props) {
                 }}
             >
                 <Typography component="h1" variant="h3">
-                    Welcome, {user.name}!
+                    Welcome, {name}!
                 </Typography>
                 <Typography component="h1" variant="h5" sx={{ mt: 2 }}>
                     Let's get started creating your profile.
