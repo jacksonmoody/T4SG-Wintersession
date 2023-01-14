@@ -1,8 +1,8 @@
 import { db } from './firebase';
-import { collection, addDoc, doc, updateDoc, deleteDoc } from "firebase/firestore";
+import { setDoc, doc, updateDoc, deleteDoc } from "firebase/firestore";
 
 export async function addUser(uid, name, authProvider, email, onboarded = false, description = "", image = "", preferences = [1,2,3]) {
-   await addDoc(collection(db, "users", uid), {
+   await setDoc(doc(db, "users", uid), {
       uid: uid,
       name: name,
       authProvider: authProvider,
