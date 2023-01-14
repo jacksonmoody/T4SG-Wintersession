@@ -42,6 +42,7 @@ async function registerWithEmailAndPassword(name, email, password){
       const user = res.user;
       await addUser(user.uid, name, "local", email);
       await updateProfile(auth.currentUser, { displayName: name })
+      
    } catch (err) {
       console.error(err);
       alert("Error with registration. Please enter a new email and password and try again.");
