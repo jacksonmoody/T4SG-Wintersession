@@ -18,7 +18,8 @@ function Register() {
     const [name, setName] = useState("");
     const navigate = useNavigate();
     
-    async function handleRegistration() {
+    async function handleRegistration(e) {
+        e.preventDefault();
         registerWithEmailAndPassword(name, email, password);
         navigate('/');
     } 

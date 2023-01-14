@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Results from "./pages/Results";
@@ -27,6 +27,7 @@ export default function App() {
         async function handleRedirectResult() {
             try {
                 const result = await getRedirectResult(auth);
+                if (!result) return;
                 const user = result.user;
                 const q = query(collection(db, "users"), where("uid", "==", user.uid));
                 const docs = await getDocs(q);
@@ -34,6 +35,7 @@ export default function App() {
                     await addUser(user.uid, user.displayName, "google", user.email)
                 }
             } catch (e) {
+                console.error(e);
             }
         }
 
@@ -73,9 +75,9 @@ export default function App() {
                         </ProtectedRoute>
                     }
                     />
-                    <Route path="login" element={<Login />} />
-                    <Route path="onboarding" element={<Onboarding users={data} currentUser={currentUser} />} />
-                    <Route path="register" element={<Register />} />
+                    <Route path="login" element={!loggedIn ? <Login /> : <Navigate to="/"/>} />
+                    <Route path="onboarding" element={loggedIn? <Onboarding users={data} currentUser={currentUser} /> : <Login />} />
+                    <Route path="register" element={!loggedIn ? <Register /> : <Navigate to="/"/>} />
                     <Route path="profile" element={
                         <ProtectedRoute loggedIn={loggedIn} onboarded={onboarded}>
                             <Profile users={data} currentUser={currentUser} />

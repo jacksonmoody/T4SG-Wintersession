@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { loginWithEmailAndPassword, signInWithGoogle } from "../helpers/firebase";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -11,18 +11,15 @@ import Container from "@mui/material/Container";
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const navigate = useNavigate();
 
     async function submit_normal(e) {
         e.preventDefault();
-        await loginWithEmailAndPassword(email, password);
-        navigate('/');
+        loginWithEmailAndPassword(email, password);
     }
 
     async function submit_google(e) {
         e.preventDefault();
-        await signInWithGoogle();
-        navigate('/');
+        signInWithGoogle();
     }
 
     return (
