@@ -17,6 +17,6 @@ Welcome! This is the repository that we will use to store and collaborate on all
 ### `npm start`
 
 Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://0.0.0.0:3000](http://0.0.0.0:3000) to view it in your browser.
 
-The page will reload when you make changes.
+Note that you will have to manually change this URL from localhost:3000 to 0.0.0.0:3000, due to a weird quirk with the Imgur API. 
