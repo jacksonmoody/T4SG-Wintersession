@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginWithEmailAndPassword, signInWithGoogle } from "../helpers/firebase";
 import Button from "@mui/material/Button";
@@ -15,13 +15,13 @@ function Login() {
 
     async function submit_normal(e) {
         e.preventDefault();
-        loginWithEmailAndPassword(email, password);
+        await loginWithEmailAndPassword(email, password);
         navigate('/');
     }
 
     async function submit_google(e) {
         e.preventDefault();
-        signInWithGoogle();
+        await signInWithGoogle();
         navigate('/');
     }
 

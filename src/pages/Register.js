@@ -20,7 +20,7 @@ function Register() {
     
     async function handleRegistration() {
         registerWithEmailAndPassword(name, email, password);
-        navigate('/login');
+        navigate('/');
     } 
     
     return (
