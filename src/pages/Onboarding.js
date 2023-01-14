@@ -14,17 +14,19 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 
 function Onboarding(props) {
-    const users = props.users.filter((user) => (user.uid === props.currentUser.uid));
-    const user = users[0];
+
     const [description, setDescription] = useState("");
     const [selectedImage, setSelectedImage] = useState(null);
     const [successAlert, setSuccessAlert] = useState(false);
     const navigate = useNavigate();
 
+    if (!props.users) return null;
+    const users = props.users.filter((user) => (user.uid === props.currentUser.uid));
+    const user = users[0];
+
     async function finish_onboarding(e) {
         e.preventDefault();
         const image = await imageUpload(selectedImage);
-        setSuccessAlert(true);
         user.description = description;
         user.image = image;
         user.onboarded = true;
@@ -83,6 +85,7 @@ function Onboarding(props) {
                     <Button
                         fullWidth
                         variant="contained"
+                        color="primary"
                         sx={{ mt: 3, mb: 1 }}
                         component="label"
                     >
@@ -91,7 +94,11 @@ function Onboarding(props) {
                             type="file"
                             accept="image/*"
                             hidden
-                            onChange={(e) => setSelectedImage(e.target.files[0])}
+                            onChange={(e) => {
+                                setSelectedImage(e.target.files[0]);
+                                setSuccessAlert(true);
+                                }
+                            }
                         />
                     </Button>
                     <Button
@@ -100,7 +107,7 @@ function Onboarding(props) {
                         variant="contained"
                         sx={{ mt: 3, mb: 1 }}
                     >
-                        Onboard
+                        Submit
                     </Button>
                 </Box>
             </Box>
