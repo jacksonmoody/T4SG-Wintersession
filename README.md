@@ -19,4 +19,4 @@ Welcome! This is the repository that we will use to store and collaborate on all
 Runs the app in development mode.\
 Open [http://0.0.0.0:3000](http://0.0.0.0:3000) to view it in your browser.
 
-Note that you will have to manually change this URL from localhost:3000 to 0.0.0.0:3000, due to a weird quirk with the Imgur API. 
+Note that you may have to manually change this URL from localhost:3000 to 0.0.0.0:3000 due to a quirk with the Imgur API. 
