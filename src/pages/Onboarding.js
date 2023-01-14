@@ -34,13 +34,13 @@ function Onboarding(props) {
 
     async function finish_onboarding(e) {
         e.preventDefault();
-        const image = await imageUpload(selectedImage);
-        user.description = description;
-        try {
-            user.image = image.data.link;
-        } catch(e) {
+        if(selectedImage) {
+            const result = await imageUpload(selectedImage);
+            user.image = result.data.link;
+        } else {
             user.image = "https://1000logos.net/wp-content/uploads/2017/02/Harvard-Logo.png";
         }
+        user.description = description;
         user.onboarded = true;
         await updateUser(user);
         navigate('/');

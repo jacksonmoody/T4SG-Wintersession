@@ -20,6 +20,7 @@ export default function App() {
     const [currentUser, setcurrentUser] = useState(null);
     const [onboarded, setOnboarded] = useState(false);
     const [initializingAuth, setInitializingAuth] = useState(true);
+    const [initializingDB, setInitializingDB] = useState(true);
     const [data, setData] = useState(null)
 
     useEffect(() => {
@@ -59,11 +60,13 @@ export default function App() {
             if (currentUser === null) return;
             const body = data.filter((user) => (user.uid === currentUser.uid));
             setOnboarded(body[0].onboarded);
+            if(initializingDB) setInitializingDB(false);
         });
 
     });
 
     if (initializingAuth) return null;
+    if (loggedIn && initializingDB) return null;
 
     return (
         <BrowserRouter>
