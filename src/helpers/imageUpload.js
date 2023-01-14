@@ -4,6 +4,7 @@ function uploadImageCallBack(file) {
         const xhr = new XMLHttpRequest(); 
         xhr.open('POST', 'https://api.imgur.com/3/image');
         xhr.setRequestHeader('Authorization', 'Client-ID ' + process.env.clientId);
+        console.log(process.env.clientId);
         const data = new FormData(); 
         data.append('image', file);
         xhr.send(data);
