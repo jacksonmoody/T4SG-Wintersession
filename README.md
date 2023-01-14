@@ -20,3 +20,7 @@ Runs the app in development mode.\
 Open [http://0.0.0.0:3000](http://0.0.0.0:3000) to view it in your browser.
 
 Note that you may have to manually change this URL from localhost:3000 to 0.0.0.0:3000 due to a quirk with the Imgur API. 
+
+## Deploying the Project
+
+This project is automatically deployed using Vercel when new commits are pushed to the main branch. You can access the latest deployment at [https://t4sg-wintersession.vercel.app/](https://t4sg-wintersession.vercel.app/)!
