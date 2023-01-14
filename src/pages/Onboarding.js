@@ -20,7 +20,7 @@ function Onboarding(props) {
     const [successAlert, setSuccessAlert] = useState(false);
     const navigate = useNavigate();
 
-    if (!props.users) return null;
+    if (!props.users || !props.currentUser) return null;
     const users = props.users.filter((user) => (user.uid === props.currentUser.uid));
     const user = users[0];
 

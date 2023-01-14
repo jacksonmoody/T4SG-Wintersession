@@ -7,6 +7,7 @@ import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import GoogleIcon from '@mui/icons-material/Google';
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -74,6 +75,7 @@ function Login() {
                     variant="contained"
                     sx={{ mt: 3, mb: 3 }}
                     onClick = {submit_google}
+                    startIcon = {<GoogleIcon/>}
                 >
                     Sign In With Google
                 </Button>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { registerWithEmailAndPassword } from "../helpers/firebase";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -16,12 +16,10 @@ function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
-    const navigate = useNavigate();
     
     async function handleRegistration(e) {
         e.preventDefault();
         registerWithEmailAndPassword(name, email, password);
-        navigate('/');
     } 
     
     return (
