@@ -80,7 +80,7 @@ export default function App() {
                     />
                     <Route path="login" element={!loggedIn ? <Login /> : <Navigate to="/"/>} />
                     <Route path="onboarding" element={loggedIn ? <Onboarding users={data} currentUser={currentUser} /> : <Navigate to="/" />} />
-                    <Route path="register" element={!loggedIn ? <Register /> : <Navigate to="/"/>} />
+                    <Route path="register" element={!loggedIn ? <Register /> : <Navigate to="/onboarding"/>} />
                     <Route path="profile" element={
                         <ProtectedRoute loggedIn={loggedIn} onboarded={onboarded}>
                             <Profile users={data} currentUser={currentUser} />
