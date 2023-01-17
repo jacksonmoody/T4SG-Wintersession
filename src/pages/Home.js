@@ -1,6 +1,6 @@
 import HowBlockingWorks from '../components/HowBlockingWorks';
 import Title from '../components/Title';
-import OtherProfiles from '../src/components/OtherProfiles';
+import OtherProfiles from '../components/OtherProfiles';
 
 function Home() {
     return (
