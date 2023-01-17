@@ -3,11 +3,14 @@ function CreateProfile(props) {
     return (
         <div>
             <h1>How to create a Profile</h1>
-            <p>Welcome! To begin the process, you must first sign-up account. 
-                <br /> 1. Fill out the questionnaire 
-                <br /> 2. Click the top right corner of the screen on the user icon. 
-                <br /> 3. Edit your information such as including a profile picture. 
-                <br /> 4. Once you have finished filling out your information, Scroll down to the bottom of the screen. </p>
+            <body>Welcome! To begin the process, you must first sign-up account. 
+               <ol>
+                    <li>Fill out the questionnaire </li>
+                    <li>Click the top right corner of the screen on the user icon. </li>
+                    <li>Edit your information such as including a profile picture. </li>
+                    <li>Once you have finished filling out your information, Scroll down to the bottom of the screen. </li>
+                </ol>
+            </body>
 
         </div>
     );
