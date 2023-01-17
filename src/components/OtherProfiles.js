@@ -1,10 +1,11 @@
 import React from 'react';
-import './OtherProfiles.css'; 
+import '../styling/OtherProfiles.css'; 
 
 // The "OtherProfiles" function is defined, which returns JSX that renders three step containers with instructions on how to view other profiles, and a App component
 function OtherProfiles () {
 	return (
     <div className="main-container">
+      <h2>How to View Other Profiles</h2>
     <div className="step-container">
         <div className="step">
             <span role="img" aria-label="emoji">🧪</span>
