@@ -1,4 +1,3 @@
-import Example from '../components/Example';
 import OtherProfiles from '../components/OtherProfiles';
 
 function Home() {
