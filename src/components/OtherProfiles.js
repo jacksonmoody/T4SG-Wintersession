@@ -5,7 +5,7 @@ import '../styling/OtherProfiles.css';
 function OtherProfiles () {
 	return (
     <div className="main-container">
-      <h2>How to View Other Profiles</h2>
+      <h1>How to View Other Profiles</h1>
     <div className="step-container">
         <div className="step">
             <span role="img" aria-label="emoji">🧪</span>
