@@ -1,6 +1,7 @@
 import Title from '../components/Title';
 import HowBlockingWorks from '../components/HowBlockingWorks';
 import OtherProfiles from '../components/OtherProfiles';
+import LinkComponent from '../components/LinkComponent';
 
 function Home() {
     return (
@@ -8,6 +9,7 @@ function Home() {
             <Title />
             <HowBlockingWorks />
             <OtherProfiles />
+            <LinkComponent />
         </div>
     );
 }
