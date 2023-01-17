@@ -1,7 +1,7 @@
 function Title(props) {
     return (
         <div className="Title">
-             <div className="box" style={
+             <div className="title" style={
                  {
                      justifyContent: "center",
                      alignItems: "center",

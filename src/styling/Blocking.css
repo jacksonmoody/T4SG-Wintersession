@@ -1,0 +1,25 @@
+.Linking {
+    flex: 1;
+}
+
+.HowBlockingWorks {
+    flex: 1;
+}
+
+.box {
+    border: 4px solid;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+}
+
+h2 {
+    margin: 0
+}
+
+p {
+    text-align: center
+}

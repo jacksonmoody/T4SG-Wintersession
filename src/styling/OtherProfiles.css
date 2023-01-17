@@ -52,4 +52,8 @@
   span[role="img"] {
       font-size: 5em;
     }
+
+.main-container {
+    margin-top: 20px;
+}
   

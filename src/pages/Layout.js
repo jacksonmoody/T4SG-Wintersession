@@ -23,7 +23,7 @@ function Layout(props) {
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              T4SG Wintersession Project | Welcome{props.username ? ", " + props.username + "!" : "!"}
+              Blocking Group Project | Welcome{props.username ? ", " + props.username + "!" : "!"}
             </Typography>
             <Box sx={{ pr: 2, display: { xs: 'none', md: 'flex'} }}>
                 <Button color = "inherit" onClick = {() => navigate('/')}>Home</Button>
