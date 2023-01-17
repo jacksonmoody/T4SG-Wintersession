@@ -1,11 +1,11 @@
-import Example from '../components/Example';
+
+import LinkComponent from '../components/LinkComponent';
 
 function Home() {
     return (
         <div className="Home">
             <h1>Home</h1>
-            <h3>Let's add our first components here</h3>
-            <Example />
+            <LinkComponent />
         </div>
     );
 }
