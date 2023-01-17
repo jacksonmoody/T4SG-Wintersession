@@ -13,6 +13,7 @@ import { useState, useEffect } from "react";
 import Layout from "./pages/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { addUser } from "./helpers/database";
+import React from 'react'
 
 export default function App() {
 

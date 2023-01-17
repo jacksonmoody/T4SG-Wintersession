@@ -1,5 +1,6 @@
 import ResultsTable from '../components/ResultsTable';
 import algorithm from '../helpers/algorithm';
+import React from 'react'
 
 function Results(props) {
     const headers = ["Name", "Email", "Description"];
