@@ -8,8 +8,8 @@ function Home() {
         <div className="Home">
             <Title />
             <HowBlockingWorks />
-            <OtherProfiles />
             <LinkComponent />
+            <OtherProfiles />
         </div>
     );
 }
