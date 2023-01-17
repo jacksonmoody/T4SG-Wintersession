@@ -1,13 +1,22 @@
 import React from 'react';
+import './OtherProfiles.css'; 
 
 function OtherProfiles () {
 	return (
-        <div>
-            <h1> How To View Other Profiles </h1>
-            <h2>Based on your answers to the compatibility quiz, and interests, you will got match to other users. 
-            Our app will display a list of users and you can click into each profile to view your matchers. </h2>
-            <App />
-        </div> 
+        <div className="step-container">
+        <div className="step">
+          <h3>Step 1</h3>
+          <p>Answer the compatibility quiz</p>
+        </div>
+        <div className="step">
+          <h3>Step 2</h3>
+          <p>View your matches based on interests</p>
+        </div>
+      <div className="step">
+        <h3>Step 3</h3>
+        <p>Click into each profile to view your matchers</p>
+      </div>
+      </div>
 	);
 }
 
@@ -47,9 +56,10 @@ class App extends React.Component {
     render() {
       const { users } = this.state;
       return (
-        <div>
+        <div className="frame">
+          <div className="users-list-container">
           {users.map((user, index) => (
-            <div key={index}>
+            <div className="user-container" key={index}>
               <img src={user.profile} alt={user.fName} />
               <div>Name: {user.fName} {user.lName}</div>
               <div>Dorm: {user.dorm}</div>
@@ -57,6 +67,7 @@ class App extends React.Component {
               <div>Interests: {user.interests}</div>
             </div>
           ))}
+        </div>
         </div>
       );
     }
