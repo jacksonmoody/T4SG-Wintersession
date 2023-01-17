@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { auth } from "../helpers/firebase";
 import { Outlet, useNavigate } from 'react-router-dom';
 import '../styling/Layout.css'
+import React from 'react'
 
 function Layout(props) {
 
