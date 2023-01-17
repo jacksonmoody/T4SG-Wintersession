@@ -7,18 +7,12 @@ function Title(props) {
                      alignItems: "center",
                      display: "flex",
                      flexDirection: "column",
-                     width: "80%",
+                     width: "100%",
                      padding: "5px"
              }}>
-                 <h2 style={{
-                     margin: "0",
-                 }}>The Blocking Grouper</h2>
-                 <h3 style={{
-                     textAlign: "center"
-                 }}>
-                 How it works
-                 <br />
-                 </h3>
+                 <h1 style={{
+                     marginTop: "20px",
+                 }}>The Blocking Grouper</h1>
 
              </div>
          </div>
