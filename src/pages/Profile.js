@@ -1,7 +1,8 @@
 import ResultsTable from '../components/ResultsTable';
-import React from 'react'
-import "../styling/Profile.css"
-import Attribute from"../components/Attribute"
+import React from 'react';
+import "../styling/Profile.css";
+import Attribute from "../components/Attribute";
+import arrayToString from "../helpers/arrayToString";
 
 /*
 function Profile(props) {
@@ -25,12 +26,14 @@ function Profile(props) {
     if (currentUser.lookingForGroup) {
         status = "Looking for Group";
     };
+
+    console.log(currentUser.clubs);
     
     return ( <div className="Profile">
                 <div className="userinfo">
                     <img alt="Profile" id="profilePicture" src = { currentUser.image }></img>
                     <h1 id="name"> { currentUser.name }</h1>
-                    <h2 id="concentration"> { currentUser.concentrations} </h2>
+                    <h2 id="concentration"> { arrayToString(currentUser.concentrations)} </h2>
                     <Attribute name = "Number of Current Blockmates" value = { currentUser.numberOfBlockmates} />
                     <Attribute name = "Status" value = { status } />
                 </div>
@@ -43,8 +46,8 @@ function Profile(props) {
                 </div>
                 <div className="userinfo">
                     <h1>Interests</h1>
-                    <Attribute name = "Hobbies" value = { currentUser.hobbies } />
-                    <Attribute name = "Clubs" value = { currentUser.clubs } />
+                    <Attribute name = "Hobbies" value = { arrayToString(currentUser.hobbies) } />
+                    <Attribute name = "Clubs" value = { arrayToString(currentUser.clubs) } />
                 </div>
                 
             </div>)
