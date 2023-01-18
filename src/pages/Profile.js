@@ -1,5 +1,5 @@
 import ResultsTable from '../components/ResultsTable';
-import React from 'react'
+import React from 'react';
 
 function Profile(props) {
     const headers = ["Name", "Email", "Description"];
