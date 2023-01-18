@@ -26,8 +26,6 @@ function Profile(props) {
     if (currentUser.lookingForGroup) {
         status = "Looking for Group";
     };
-
-    console.log(currentUser.clubs);
     
     return ( <div className="Profile">
                 <div className="userinfo">
