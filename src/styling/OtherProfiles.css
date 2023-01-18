@@ -23,33 +23,33 @@
       border-radius: 10px;
 }
   
-  .user-container img {
+.user-container img {
       width: 30%;
-  }
+}
   
-  .step-container {
+.step-container {
       display: flex;
       justify-content: space-between;
       margin: 0 auto;
-  }
+}
   
-  h1 {
+h1 {
       text-align: center;
-  }
+}
     
-  .step {
+.step {
       width: 30%;
       text-align: center;
-  }
+}
   
-  .Home {
+.Home {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-  }
+}
 
-  span[role="img"] {
+span[role="img"] {
       font-size: 5em;
     }
 

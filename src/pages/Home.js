@@ -14,6 +14,8 @@ function Home() {
                 <LinkComponent />
             </div>
             <CreateProfile />
+            <h1>Home</h1>
+            <h3>How To View Other Profiles</h3>
             <OtherProfiles />
         </div>
     );
