@@ -58,7 +58,7 @@ function Onboarding({ users, currentUser }) {
                 setSleepTime(e.target.value);
                 break;
             case "hobbies":
-                setHobbies(e.target.value);
+                setHobbies(e);
                 break;
             case "roomLoudness":
                 setRoomLoudness(e.target.value);
