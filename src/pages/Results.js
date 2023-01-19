@@ -2,6 +2,7 @@ import ResultsTable from '../components/ResultsTable';
 import algorithm from '../helpers/algorithm';
 import React from 'react';
 import arrayToString from '../helpers/arrayToString';
+import UserCard from '../helpers/UserCard';
 
 function Results(props) {
     const headers = ["Name", "Email", "Description", "Clubs", "Gender", "Number of Blockmates", "Concentration", "Cleanliness", "Sleep Time", "Hobbies", "Room Loudness", "Looking for Group?", "Dorm", "Type of Person"];
@@ -12,7 +13,7 @@ function Results(props) {
     return (
         <div className="Results">
             <h1>Results</h1>
-            <ResultsTable header = {headers} body = {body}/>
+            <UserCard body[0][0], body[0][1], body[0][2], body[0][3], body[0][5] />
         </div>
     );
 }
