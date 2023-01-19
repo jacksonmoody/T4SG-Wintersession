@@ -24,7 +24,7 @@ export default function SubmitToDatabase({image, user}){
 
         submit_data();
 
-    },[image, navigate, user]);
+    },[]);
     
     return(
         <p>Submitting to database. Please wait.</p>
