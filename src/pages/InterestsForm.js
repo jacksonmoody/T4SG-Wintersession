@@ -6,6 +6,7 @@ function InterestsForm({ nextStep, handleChange }) {
 
     const activitieslist = ["Knitting", "Gaming", "Hiking"]
 
+    //Create new state variables for entertainment and sports here
     const [selectedActivities, setSelectedActivities] = useState([]);
 
     const doChange = (event) => {
@@ -14,8 +15,12 @@ function InterestsForm({ nextStep, handleChange }) {
 
     };
 
+    //Make additional doChange functions for entertainment and sports here
+
     useEffect(() => 
     {
+        //Here you can concatenate the activities, entertainment, and sports arrays into a single array
+        //Then pass this array into the handleChange function
        
         handleChange(selectedActivities, "hobbies");
         
