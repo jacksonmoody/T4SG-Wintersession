@@ -1,8 +1,9 @@
-import { Container, Typography, Box} from "@mui/material";
-import InterestButton from "../components/InterestButton";
+import { Container, Typography, Box, Select, MenuItem, OutlinedInput, InputLabel, FormControl, Button} from "@mui/material";
 import React from "react";
 
-function InterestsForm() {
+
+function InterestsForm({nextStep, handleChange}) {
+    
     
     return(
         <div className="compatibility"
@@ -27,25 +28,84 @@ function InterestsForm() {
                         sx={{fontWeight: 'bold', paddingBottom: 1,}}>
                         Activities
                     </Typography>
-                    <Box sx={{ height: '50%', maxWidth:'100%', overflowX: 'scroll', whiteSpace: 'nowrap', display: 'flex'}}>
-                        <InterestButton label="Gaming"/>
-                        <InterestButton label="Knitting"/>
-                        <InterestButton label="Singing"/>
-                        <InterestButton label="Reading"/>
-                        <InterestButton label="Writing"/>
-                    </Box>
+                        <FormControl fullWidth>
+                            <Select
+                                labelId="Activities-Select"
+                                id="Activities"
+                                label="Activities"
+                                sx={{
+                                    p: 0,
+                                    mb: 2,
+                                }}
+                                onChange={(e) => handleChange(e, "hobbies")}>
+                                <MenuItem value={0}></MenuItem>
+                                <MenuItem value={1}>Knitting</MenuItem>
+                                <MenuItem value={2}>Gaming</MenuItem>
+                                <MenuItem value={3}>Hiking</MenuItem>
+                                <MenuItem value={4}>Reading</MenuItem>
+                                <MenuItem value={5}>Dancing</MenuItem>
+                                <MenuItem value={6}>Cooking</MenuItem>
+                                <MenuItem value={7}>Singing</MenuItem>
+                                <MenuItem value={8}>Writing</MenuItem>
+                                <MenuItem value={9}>Listening to music</MenuItem>
+                            </Select>
+                    </FormControl>
                     <Typography 
                         variant="h6"
                         align="center"
                         sx={{fontWeight: 'bold', paddingBottom: 1,}}>
                         Entertainment
                     </Typography>
+                    <FormControl fullWidth>
+                        <Select
+                            labelId="Entertainment-Select"
+                            id="Entertainment"
+                            label="Entertainment"
+                            sx={{
+                                p: 0,
+                                mb: 2,
+                            }}
+                            onChange={(e) => handleChange(e, "hobbies")}>
+                            <MenuItem value={0}>NBA</MenuItem>
+                            <MenuItem value={1}>NHL</MenuItem>
+                            <MenuItem value={2}>Movies</MenuItem>
+                            <MenuItem value={3}>Sitcoms</MenuItem>
+                            <MenuItem value={4}>RomCom</MenuItem>
+                            <MenuItem value={5}>Action</MenuItem>
+                            <MenuItem value={6}>Comedy</MenuItem>
+                        </Select>
+                    </FormControl>
                     <Typography 
                         variant="h6"
                         align="center"
                         sx={{fontWeight: 'bold', paddingBottom: 1,}}>
                         Sports
                     </Typography>
+                    <FormControl fullWidth>
+                            <Select
+                                labelId="Sports-Select"
+                                id="Sports"
+                                label="Sports"
+                                sx={{
+                                    p: 0,
+                                    mb: 2,
+                                }}
+                                onChange={(e) => handleChange(e, "hobbies")}>
+                                <MenuItem value={0}></MenuItem>
+                                <MenuItem value={1}>Soccer</MenuItem>
+                                <MenuItem value={2}>American Football</MenuItem>
+                                <MenuItem value={3}>Rubgy</MenuItem>
+                                <MenuItem value={4}>Baseball</MenuItem>
+                                <MenuItem value={5}>Tennis</MenuItem>
+                                <MenuItem value={6}>Basketball</MenuItem>
+                                <MenuItem value={7}>Volleyball</MenuItem>
+                                <MenuItem value={8}>Cricket</MenuItem>
+                                <MenuItem value={9}>Golf</MenuItem>
+                            </Select>
+                    </FormControl>
+                    <Button variant="contained" sx={{width: '50%', backgroundColor:'black'}} onClick={() => nextStep()}>
+                    Continue
+                    </Button>
                 </Box>
             </Container>
         </div>
