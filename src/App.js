@@ -14,6 +14,7 @@ import Layout from "./pages/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { addUser } from "./helpers/database";
 import React from 'react';
+import ClubsForm from "./pages/ClubsForm";
 
 export default function App() {
 
@@ -95,6 +96,7 @@ export default function App() {
                     }
                     />
                     <Route path="*" element={<ErrorPage />} />
+                    <Route path="clubsform" element={<ClubsForm />} />
                 </Route>
             </Routes>
         </BrowserRouter>
