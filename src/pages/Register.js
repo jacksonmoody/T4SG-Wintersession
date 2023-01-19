@@ -40,10 +40,10 @@ function Register() {
                     <Box component="form" onSubmit={handleRegistration} sx={{ mt: 3 }}>
                         <Grid container spacing={2}>
                             <Grid item xs={12}>
-                                <TextField
+                            <TextField
                                     required
                                     fullWidth
-                                    id="name"
+                                    id=""
                                     label="Full Name"
                                     name="name"
                                     autoComplete="name"
