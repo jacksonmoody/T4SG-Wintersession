@@ -6,6 +6,8 @@ function ClubsForm({nextStep, handleChange}) {
 
   const selectionChangeHandler = (event) => {
     setSelected(event.target.value);
+    console.log(selected);
+    handleChange(selected, "clubs");
   };
 
   return (
