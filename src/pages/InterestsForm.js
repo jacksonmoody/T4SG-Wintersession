@@ -1,65 +1,62 @@
-import { Container, Typography, Box, Select, MenuItem, OutlinedInput, InputLabel, FormControl, Button} from "@mui/material";
-import React, { useState } from "react";
+import { Container, Typography, Box, Select, MenuItem, OutlinedInput, InputLabel, FormControl, Button } from "@mui/material";
+import React, { useState, useEffect } from "react";
 
 
-function InterestsForm({nextStep, handleChange}) {
-    
+function InterestsForm({ nextStep, handleChange }) {
+
     const activitieslist = ["Knitting", "Gaming", "Hiking"]
 
-    // const [selected, setSelected] =  useState([]);
-
-    let selected = [];
+    const [selectedActivities, setSelectedActivities] = useState([]);
 
     const doChange = (event) => {
-        const {
-          target: { value },
-        } = event;
 
-        selected.push(event.target.value[1]);
-        console.log(selected);
+        setSelectedActivities(event.target.value);
 
-      };
+    };
 
-    
-    return(
+    useEffect(() => 
+    {
+       
+        handleChange(selectedActivities, "hobbies");
+        
+    }, [selectedActivities])
+
+    return (
         <div className="compatibility"
-        style = {{
-            display: "flex",
-            height: "100%",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-        }}>
-            <Container maxWidth="xs" sx={{m:2}} >
-                <Box sx={{ p: 4, border: '4px solid black', borderRadius: '20px', display: 'flex', flexDirection:'column', alignItems: 'center'}}>
-                    <Typography 
+            style={{
+                display: "flex",
+                height: "100%",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+            }}>
+            <Container maxWidth="xs" sx={{ m: 2 }} >
+                <Box sx={{ p: 4, border: '4px solid black', borderRadius: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <Typography
                         variant="h5"
                         align="center"
-                        sx={{fontWeight: 'bold', paddingBottom: 1,}}>
+                        sx={{ fontWeight: 'bold', paddingBottom: 1, }}>
                         What are your interests?
                     </Typography>
-                    <Typography 
+                    <Typography
                         variant="h6"
                         align="center"
-                        sx={{fontWeight: 'bold', paddingBottom: 1,}}>
+                        sx={{ fontWeight: 'bold', paddingBottom: 1, }}>
                         Activities
                     </Typography>
-                        <FormControl fullWidth>
-                            <Select
-                                labelId="Activities-Select"
-                                id="Activities"
-                                multiple
-                                value={[selected]}
-                                label="Activities"
-                                sx={{
-                                    p: 0,
-                                    mb: 2,
-                                }}
-                                onChange={doChange}>
+                    <FormControl fullWidth>
+                        <Select
+                            labelId="Activities-Select"
+                            id="Activities"
+                            multiple
+                            value={selectedActivities}
+                            onChange={doChange}
+                            renderValue={(selectedActivities) => selectedActivities.join(', ')}
+                        >
 
-                                <MenuItem value={activitieslist[0]}> { activitieslist[0] }</MenuItem>
-                                <MenuItem value={activitieslist[1]}> { activitieslist[1] }</MenuItem>
-                                <MenuItem value={activitieslist[2]}> { activitieslist[2] }</MenuItem>
+                                <MenuItem value={activitieslist[0]}> {activitieslist[0]}</MenuItem>
+                                <MenuItem value={activitieslist[1]}> {activitieslist[1]}</MenuItem>
+                                <MenuItem value={activitieslist[2]}> {activitieslist[2]}</MenuItem>
                                 {/* <MenuItem value={4}>Reading</MenuItem>
                                 <MenuItem value={5}>Dancing</MenuItem>
                                 <MenuItem value={6}>Cooking</MenuItem>
@@ -121,13 +118,13 @@ function InterestsForm({nextStep, handleChange}) {
                                 <MenuItem value={9}>Golf</MenuItem>
                             </Select>
                     </FormControl> */}
-                    <Button variant="contained" sx={{width: '50%', backgroundColor:'black'}} onClick={() => nextStep()}>
-                    Continue
+                    <Button variant="contained" sx={{ width: '50%', backgroundColor: 'black' }} onClick={() => nextStep()}>
+                        Continue
                     </Button>
                 </Box>
             </Container>
         </div>
-        
+
     )
 }
 
