@@ -1,10 +1,11 @@
 import { useState } from "react";
 import SubmitToDatabase from "../helpers/SubmitToDatabase";
-import CompatabilityQuiz4 from "./CompatibilityQuiz4";
 import Onboarding1 from "./Onboarding1";
 import ClubsForm from "./ClubsForm";
 import AcademicInterest from "./AcademicInterest";
 import CompatibilityQuiz1 from "./CompatibilityQuiz1";
+import CompatabilityQuiz2 from "./CompatabilityQuiz2";
+import CompatabilityQuiz4 from "./CompatibilityQuiz4";
 
 function Onboarding({ users, currentUser }) {
     const [step, setStep] = useState(1);
@@ -112,16 +113,16 @@ function Onboarding({ users, currentUser }) {
                 <AcademicInterest nextStep={nextStep} handleChange={handleChange} />
             )
         case 3:
-            return(
+            return (
                 <CompatibilityQuiz1 nextStep={nextStep} handleChange={handleChange} />
             )
         case 4:
             return(
-                <CompatabilityQuiz4 nextStep={nextStep} handleChange={handleChange} />
+                <CompatabilityQuiz2 nextStep={nextStep} handleChange={handleChange} />
             )
         case 5:
             return(
-                <AcademicInterest nextStep={nextStep} handleChange={handleChange} />
+                <CompatabilityQuiz4 nextStep={nextStep} handleChange={handleChange} />
             )
         case 6:
             return(
