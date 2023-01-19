@@ -1,9 +1,7 @@
 import { useState } from "react";
+import SubmitToDatabase from "../helpers/SubmitToDatabase";
 import Onboarding1 from "./Onboarding1";
 import Onboarding2 from "./Onboarding2";
-import { useNavigate } from "react-router-dom";
-import imageUpload from "../helpers/imageUpload";
-import { updateUser } from "../helpers/database";
 
 function Onboarding({ users, currentUser }) {
     const [step, setStep] = useState(1);
@@ -21,7 +19,6 @@ function Onboarding({ users, currentUser }) {
     const [lookingForGroup, setLookingForGroup] = useState(false);
     const [dorm, setDorm] = useState("");
     const [typeOfPerson, setTypeOfPerson] = useState("");
-    const navigate = useNavigate();
 
     const nextStep = () => {
         setStep(step + 1);
@@ -74,7 +71,7 @@ function Onboarding({ users, currentUser }) {
         }
     }
 
-    async function submit_onboarding() {
+    function submit_onboarding() {
 
         let user;
 
@@ -85,36 +82,21 @@ function Onboarding({ users, currentUser }) {
             return null;
         }
 
-        if (selectedImage) {
-            const result = await imageUpload(selectedImage);
-            user.image = result.data.link;
-        } else {
-            user.image = "https://1000logos.net/wp-content/uploads/2017/02/Harvard-Logo.png";
-        }
+        description ? user.description = description : user.description = "";
+        concentration ? user.intendedConcentrations = concentration : user.intendedConcentrations = "";
+        clubs ? user.clubs = clubs : user.clubs = [];
+        gender ? user.gender = gender : user.gender = "";
+        currentBlockmates ? user.numBlockmates = currentBlockmates : user.numBlockmates = 0;
+        cleanliness ? user.cleanlinessLevel = cleanliness : user.cleanlinessLevel = 0;
+        sleepTime ? user.sleepTime = sleepTime : user.sleepTime = 0;
+        hobbies ? user.hobbies = hobbies : user.hobbies = [];
+        roomLoudness ? user.roomLoudness = roomLoudness : user.roomLoudness = 0;
+        lookingForGroup ? user.lookingForGroup = lookingForGroup : user.lookingForGroup = false;
+        dorm ? user.dorm = dorm : user.dorm = "";
+        typeOfPerson ? user.typeOfPerson = typeOfPerson : user.typeOfPerson = "";
+        user.onboarded = true;
 
-        try {
-            user.description = description;
-            user.intendedConcentrations = concentration;
-            user.clubs = clubs;
-            user.gender = gender;
-            user.numBlockmates = currentBlockmates;
-            user.cleanlinessLevel = cleanliness;
-            user.sleepTime = sleepTime;
-            user.hobbies = hobbies;
-            user.roomLoudness = roomLoudness;
-            user.lookingForGroup = lookingForGroup;
-            user.dorm = dorm;
-            user.typeOfPerson = typeOfPerson;
-            user.onboarded = true;
-        } catch (e) {
-            user = { description: "", intendedConcentrations: "", clubs: [], gender: "", numBlockmates: 0, cleanlinessLevel: 0, sleepTime: 0, hobbies: [], roomLoudness: 0, lookingForGroup: false, dorm: "", typeOfPerson: "", onboarded: true }
-        }
-        
-        console.log("Updating user...");
-        console.log(user);
-
-        await updateUser(user);
-        navigate('/');
+        return user;
     }
 
     switch (step) {
@@ -126,9 +108,11 @@ function Onboarding({ users, currentUser }) {
             return (
                 <Onboarding2 nextStep={nextStep} handleChange={handleChange} />
             )
+        //Add additional steps here!!
         case 3:
-            submit_onboarding();
-            break;
+            return(
+                <SubmitToDatabase image={selectedImage} user={submit_onboarding()} />
+            )
         default:
             break;
     }

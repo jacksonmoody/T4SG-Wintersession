@@ -1,5 +1,4 @@
 import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
@@ -24,7 +23,6 @@ function Onboarding1({ users, currentUser, nextStep, handleChange, successAlert}
 
     return (
         <Container component="main" maxWidth="s">
-            <CssBaseline />
             <Box
                 sx={{
                     marginTop: 8,
