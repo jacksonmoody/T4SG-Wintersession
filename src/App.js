@@ -14,6 +14,7 @@ import Layout from "./pages/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { addUser } from "./helpers/database";
 import React from 'react';
+import CompatibilityQuiz1 from "./pages/CompatibilityQuiz1";
 
 export default function App() {
 
@@ -82,6 +83,7 @@ export default function App() {
                     <Route path="login" element={!loggedIn ? <Login /> : <Navigate to="/"/>} />
                     <Route path="onboarding" element={loggedIn ? <Onboarding users={data} currentUser={currentUser} /> : <Navigate to="/" />} />
                     <Route path="register" element={!loggedIn ? <Register /> : <Navigate to="/onboarding"/>} />
+                    
                     <Route path="profile" element={
                         <ProtectedRoute loggedIn={loggedIn} onboarded={onboarded}>
                             <Profile users={data} currentUser={currentUser} />
@@ -95,6 +97,7 @@ export default function App() {
                     }
                     />
                     <Route path="*" element={<ErrorPage />} />
+                    <Route path="compatibility-quiz-1" element={<CompatibilityQuiz1 />} />
                 </Route>
             </Routes>
         </BrowserRouter>
