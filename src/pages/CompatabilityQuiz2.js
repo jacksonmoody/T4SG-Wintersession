@@ -1,20 +1,15 @@
 import { Slider } from "@mui/material";
-import { useState } from "react";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { updateUser } from "../helpers/database";
-import imageUpload from "../helpers/imageUpload";
-import { useNavigate } from "react-router-dom";
-import TextField from "@mui/material/TextField";
-import Collapse from "@mui/material/Collapse";
-import Alert from "@mui/material/Alert";
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
 import React from 'react';
-
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 
 function CompatabilityQuiz2({ nextStep, handleChange }) {
   const marks = [
