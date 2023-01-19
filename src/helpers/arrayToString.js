@@ -1,13 +1,18 @@
 function arrayToString(arr) {
 
     if (Array.isArray(arr)) {
-        let str = "";
-        for (let i = 0; i < arr.length - 1; i++) {
-            str += arr[i] + ", ";
+        if (arr.length > 0){
+            let str = "";
+            for (let i = 0; i < arr.length - 1; i++) {
+                str += arr[i] + ", ";
+            }
+            str += arr[arr.length - 1];
+    
+            return str;
         }
-        str += arr[arr.length - 1];
-
-        return str;
+        else {
+            return "None";
+        }
     }
     else {
         return arr;
