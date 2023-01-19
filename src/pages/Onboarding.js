@@ -40,7 +40,8 @@ function Onboarding({ users, currentUser }) {
                 setConcentration(e.target.value);
                 break;
             case "clubs":
-                setClubs(e.target.value);
+                setClubs(e);
+                console.log(e);
                 break;
             case "gender":
                 setGender(e.target.value);
