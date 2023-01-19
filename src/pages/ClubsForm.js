@@ -1,14 +1,16 @@
-import { Container, Typography, Box, Select, MenuItem, FormHelperText, FormControl, InputLabel, Chip, Button } from '@mui/material';
-import React, { useState } from 'react';
+import { Container, Typography, Box, Select, MenuItem, FormControl, InputLabel, Chip, Button } from '@mui/material';
+import React, { useEffect, useState } from 'react';
 
 function ClubsForm({nextStep, handleChange}) {
   const [selected, setSelected] = useState([]);
 
   const selectionChangeHandler = (event) => {
     setSelected(event.target.value);
-    console.log(selected);
+  }
+
+  useEffect(() => {
     handleChange(selected, "clubs");
-  };
+  }, [selected])
 
   return (
     <div className="clubs"
