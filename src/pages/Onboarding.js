@@ -2,6 +2,7 @@ import { useState } from "react";
 import SubmitToDatabase from "../helpers/SubmitToDatabase";
 import Onboarding1 from "./Onboarding1";
 import Onboarding2 from "./Onboarding2";
+import CompatabilityQuiz2 from "./CompatabilityQuiz2";
 
 function Onboarding({ users, currentUser }) {
     const [step, setStep] = useState(1);
@@ -108,8 +109,11 @@ function Onboarding({ users, currentUser }) {
             return (
                 <Onboarding2 nextStep={nextStep} handleChange={handleChange} />
             )
-        //Add additional steps here!!
         case 3:
+            return (
+                <CompatabilityQuiz2 nextStep={nextStep} handleChange={handleChange} />
+            )
+        case 4:
             return(
                 <SubmitToDatabase image={selectedImage} user={submit_onboarding()} />
             )
