@@ -1,7 +1,7 @@
-function UserCard() {
+function UserCard(props) {
     return (
         <div>
-            <h1>Profile Card</h1>
+            {props.name}
         </div>
     )
 }
