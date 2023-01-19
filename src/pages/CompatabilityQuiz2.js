@@ -60,7 +60,7 @@ function CompatabilityQuiz2({ nextStep, handleChange }) {
             alignItems: 'center'
           }}
         >
-          <Typography component="h1" variant="h3">
+          <Typography component="h1" variant="h3" align="center">
             COMPATABILITY QUIZ
           </Typography>
 
