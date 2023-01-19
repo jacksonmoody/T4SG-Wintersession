@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SubmitToDatabase from "../helpers/SubmitToDatabase";
+import CompatabilityQuiz4 from "./CompatibilityQuiz4";
 import Onboarding1 from "./Onboarding1";
 import Onboarding2 from "./Onboarding2";
 
@@ -93,7 +94,7 @@ function Onboarding({ users, currentUser }) {
         roomLoudness ? user.roomLoudness = roomLoudness : user.roomLoudness = 0;
         lookingForGroup ? user.lookingForGroup = lookingForGroup : user.lookingForGroup = false;
         dorm ? user.dorm = dorm : user.dorm = "";
-        typeOfPerson ? user.typeOfPerson = typeOfPerson : user.typeOfPerson = "";
+        typeOfPerson ? user.typeOfPerson = typeOfPerson : user.typeOfPerson = 0;
         user.onboarded = true;
 
         return user;
@@ -110,6 +111,10 @@ function Onboarding({ users, currentUser }) {
             )
         //Add additional steps here!!
         case 3:
+            return(
+                <CompatabilityQuiz4 nextStep={nextStep} handleChange={handleChange} />
+            )
+        case 4:
             return(
                 <SubmitToDatabase image={selectedImage} user={submit_onboarding()} />
             )

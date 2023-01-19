@@ -17,7 +17,7 @@ const marks = [
   }
 ];
 
-function CompatabilityQuiz4(props) {
+function CompatabilityQuiz4({nextStep, handleChange}) {
   return (
     <Container component="main" maxWidth="s" >
       <Box
@@ -32,6 +32,7 @@ function CompatabilityQuiz4(props) {
         <Box sx={{ width: 200, border: 2 }}>
           <Slider
             aria-label="Custom marks"
+            onChange={(e) => handleChange (e, "typeOfPerson")}
             defaultValue={50}
             step={1}
             marks={marks}
@@ -60,7 +61,7 @@ function CompatabilityQuiz4(props) {
         </Box>
 
         <Stack direction="row" spacing={5}>
-          <Button variant="outlined" align="center" justifyContent="center" alignItems="center" > Continue</Button>
+          <Button onClick ={() => nextStep()} variant="outlined" align="center" justifyContent="center" alignItems="center" > Continue</Button>
         </Stack>
       </Box>
 
