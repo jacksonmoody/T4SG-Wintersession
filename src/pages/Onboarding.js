@@ -3,6 +3,7 @@ import SubmitToDatabase from "../helpers/SubmitToDatabase";
 import CompatabilityQuiz4 from "./CompatibilityQuiz4";
 import Onboarding1 from "./Onboarding1";
 import Onboarding2 from "./Onboarding2";
+import AcademicInterest from "./AcademicInterest";
 
 function Onboarding({ users, currentUser }) {
     const [step, setStep] = useState(1);
@@ -109,12 +110,15 @@ function Onboarding({ users, currentUser }) {
             return (
                 <Onboarding2 nextStep={nextStep} handleChange={handleChange} />
             )
-        //Add additional steps here!!
         case 3:
+            return(
+                <AcademicInterest nextStep={nextStep} handleChange={handleChange} />
+            )
+        case 4:
             return(
                 <CompatabilityQuiz4 nextStep={nextStep} handleChange={handleChange} />
             )
-        case 4:
+        case 5:
             return(
                 <SubmitToDatabase image={selectedImage} user={submit_onboarding()} />
             )
