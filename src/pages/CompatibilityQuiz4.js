@@ -66,7 +66,6 @@ function CompatabilityQuiz4(props) {
 
         
 
-
     </Container>
 
   );
