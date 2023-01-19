@@ -1,9 +1,25 @@
 import { Container, Typography, Box, Select, MenuItem, OutlinedInput, InputLabel, FormControl, Button} from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
 
 function InterestsForm({nextStep, handleChange}) {
     
+    const activitieslist = ["Knitting", "Gaming", "Hiking"]
+
+    // const [selected, setSelected] =  useState([]);
+
+    let selected = [];
+
+    const doChange = (event) => {
+        const {
+          target: { value },
+        } = event;
+
+        selected.push(event.target.value[1]);
+        console.log(selected);
+
+      };
+
     
     return(
         <div className="compatibility"
@@ -32,25 +48,27 @@ function InterestsForm({nextStep, handleChange}) {
                             <Select
                                 labelId="Activities-Select"
                                 id="Activities"
+                                multiple
+                                value={[selected]}
                                 label="Activities"
                                 sx={{
                                     p: 0,
                                     mb: 2,
                                 }}
-                                onChange={(e) => handleChange(e, "hobbies")}>
-                                <MenuItem value={0}></MenuItem>
-                                <MenuItem value={1}>Knitting</MenuItem>
-                                <MenuItem value={2}>Gaming</MenuItem>
-                                <MenuItem value={3}>Hiking</MenuItem>
-                                <MenuItem value={4}>Reading</MenuItem>
+                                onChange={doChange}>
+
+                                <MenuItem value={activitieslist[0]}> { activitieslist[0] }</MenuItem>
+                                <MenuItem value={activitieslist[1]}> { activitieslist[1] }</MenuItem>
+                                <MenuItem value={activitieslist[2]}> { activitieslist[2] }</MenuItem>
+                                {/* <MenuItem value={4}>Reading</MenuItem>
                                 <MenuItem value={5}>Dancing</MenuItem>
                                 <MenuItem value={6}>Cooking</MenuItem>
                                 <MenuItem value={7}>Singing</MenuItem>
                                 <MenuItem value={8}>Writing</MenuItem>
-                                <MenuItem value={9}>Listening to music</MenuItem>
+                                <MenuItem value={9}>Listening to music</MenuItem> */}
                             </Select>
                     </FormControl>
-                    <Typography 
+                    {/* <Typography 
                         variant="h6"
                         align="center"
                         sx={{fontWeight: 'bold', paddingBottom: 1,}}>
@@ -102,7 +120,7 @@ function InterestsForm({nextStep, handleChange}) {
                                 <MenuItem value={8}>Cricket</MenuItem>
                                 <MenuItem value={9}>Golf</MenuItem>
                             </Select>
-                    </FormControl>
+                    </FormControl> */}
                     <Button variant="contained" sx={{width: '50%', backgroundColor:'black'}} onClick={() => nextStep()}>
                     Continue
                     </Button>
