@@ -83,7 +83,7 @@ function Onboarding({ users, currentUser }) {
         }
 
         description ? user.description = description : user.description = "";
-        concentration ? user.intendedConcentrations = concentration : user.intendedConcentrations = "";
+        concentration ? user.intendedConcentrations = concentration : user.intendedConcentrations = [];
         clubs ? user.clubs = clubs : user.clubs = [];
         gender ? user.gender = gender : user.gender = "";
         currentBlockmates ? user.numBlockmates = currentBlockmates : user.numBlockmates = 0;
