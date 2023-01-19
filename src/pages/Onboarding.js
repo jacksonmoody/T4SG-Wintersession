@@ -3,6 +3,7 @@ import SubmitToDatabase from "../helpers/SubmitToDatabase";
 import CompatabilityQuiz4 from "./CompatibilityQuiz4";
 import Onboarding1 from "./Onboarding1";
 import Onboarding2 from "./Onboarding2";
+import ClubsForm from "./ClubsForm";
 import AcademicInterest from "./AcademicInterest";
 
 function Onboarding({ users, currentUser }) {
@@ -112,13 +113,17 @@ function Onboarding({ users, currentUser }) {
             )
         case 3:
             return(
-                <AcademicInterest nextStep={nextStep} handleChange={handleChange} />
+                <ClubsForm nextStep={nextStep} handleChange={handleChange} />
             )
         case 4:
             return(
-                <CompatabilityQuiz4 nextStep={nextStep} handleChange={handleChange} />
+                <AcademicInterest nextStep={nextStep} handleChange={handleChange} />
             )
         case 5:
+            return(
+                <CompatabilityQuiz4 nextStep={nextStep} handleChange={handleChange} />
+            )
+        case 6:
             return(
                 <SubmitToDatabase image={selectedImage} user={submit_onboarding()} />
             )
