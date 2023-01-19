@@ -97,6 +97,7 @@ export default function App() {
                     }
                     />
                     <Route path="*" element={<ErrorPage />} />
+                    <Route path="test" element={<InterestsForm />} />
                 </Route>
             </Routes>
         </BrowserRouter>
