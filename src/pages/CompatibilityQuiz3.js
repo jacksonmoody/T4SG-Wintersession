@@ -11,7 +11,7 @@ const marks = [
     }
 ]
 
-function CompatibilityQuiz3() {
+function CompatibilityQuiz3({ nextStep, handleChange }) {
     return(
         <div className="compatibility"
         style = {{
@@ -47,8 +47,8 @@ function CompatibilityQuiz3() {
                             sx={{
                                 color: 'black',
                                 width: '80%',
-                                
                             }}
+                            onChange={(e) => handleChange(e, "roomLoudness")}
                             >
                         </Slider>
                     </Container>
@@ -70,8 +70,7 @@ function CompatibilityQuiz3() {
                             sx={{
                                 color: 'black',
                                 width: '80%',
-                            }}
-                            >
+                            }}>
                         </Slider>
                     </Container>
                     <Typography 
@@ -89,7 +88,8 @@ function CompatibilityQuiz3() {
                                     label="Importance"
                                     sx={{
                                         p: 0,
-                                    }}>
+                                    }}
+                                    onChange={(e) => handleChange(e, )}>
                                     <MenuItem value={0}>Not Important</MenuItem>
                                     <MenuItem value={1}>Somewhat Important</MenuItem>
                                     <MenuItem value={2}>Important</MenuItem>
@@ -97,7 +97,7 @@ function CompatibilityQuiz3() {
                                 </Select>
                         </FormControl>
                     </Container>
-                    <Button variant="contained" sx={{width: '50%', backgroundColor:'black'}}>
+                    <Button variant="contained" sx={{width: '50%', backgroundColor:'black'}} onClick={() => nextStep()}>
                         Continue
                     </Button>
                 </Box>
