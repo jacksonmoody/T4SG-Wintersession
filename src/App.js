@@ -14,6 +14,7 @@ import Layout from "./pages/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { addUser } from "./helpers/database";
 import React from 'react';
+import AcademicInterest from "./pages/AcademicInterest";
 
 export default function App() {
 
@@ -95,6 +96,7 @@ export default function App() {
                     }
                     />
                     <Route path="*" element={<ErrorPage />} />
+                    <Route path="academicinterest" element={<AcademicInterest />} />
                 </Route>
             </Routes>
         </BrowserRouter>
