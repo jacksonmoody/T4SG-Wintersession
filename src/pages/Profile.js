@@ -1,23 +1,7 @@
-import ResultsTable from '../components/ResultsTable';
 import React from 'react';
 import "../styling/Profile.css";
 import Attribute from "../components/Attribute";
 import arrayToString from "../helpers/arrayToString";
-
-/*
-function Profile(props) {
-    const headers = ["Name", "Email", "Description"];
-    let body = props.users.filter((user) => (user.uid === props.currentUser.uid));
-    body = body.map((user) => ([user.name, user.email, user.description]));
-
-    return (
-        <div className="Profile">
-            <h1>Profile</h1>
-            <ResultsTable header = {headers} body = {body}/>
-        </div>
-    );
-} */
-
 
 function Profile(props) {
     const currentUser = props.users.filter((user) => (user.uid === props.currentUser.uid))[0];
