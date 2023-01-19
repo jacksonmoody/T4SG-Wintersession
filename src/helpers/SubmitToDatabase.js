@@ -18,12 +18,11 @@ export default function SubmitToDatabase({image, user}){
             }
 
             await updateUser(userToUpdate);
+            navigate("/");
 
         }
 
         submit_data();
-        navigate("/");
-
 
     },[image, navigate, user]);
     
