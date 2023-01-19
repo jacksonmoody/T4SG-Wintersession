@@ -3,6 +3,10 @@ import { useState } from 'react';
 import { Box } from "@mui/material";
 import { Button } from "@mui/material";
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
 
 function CompatibilityQuiz1 () {
     const [value1, setValue1] = useState(0);
@@ -15,6 +19,12 @@ function CompatibilityQuiz1 () {
     const handleChange2 = (event, newValue) => {
         setValue2(newValue);
     };
+
+    const location = useLocation();
+
+    function handleContinue() {
+        location.pathname === '/' ? location.push("/") : location.push("/");
+    }
 
     return (
         <Grid container justify="center" alignItems="center" direction="column">
@@ -64,9 +74,12 @@ function CompatibilityQuiz1 () {
                 />
                 </Grid>
                 <Grid item align="center">
-                <Button variant="contained" color="primary" onClick={() => console.log("Continue button clicked!")}>
-                    Continue
+                <Link to="/" style={{textDecoration: 'none'}} onClick={handleContinue}>
+                <Button variant="contained" color="primary" style={{ textDecoration: 'none' }} endIcon={<ArrowForwardIcon />}>
+                     Continue
                 </Button>
+                </Link>
+                
             </Grid>
             </div>
         </Grid>
