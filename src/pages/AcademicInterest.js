@@ -40,6 +40,7 @@ function AcademicInterest({nextStep, handleChange}) {
                                  <MenuItem value={"Classics"}>Classics</MenuItem>
                                  <MenuItem value={"Computer Science"}>Computer Science</MenuItem>
                                  <MenuItem value={"Economics"}>Economics</MenuItem>
+                                 <MenuItem value={"Engineering"}>Engineering</MenuItem>
                                  <MenuItem value={"History"}>History</MenuItem>
                                  <MenuItem value={"Government"}>Government</MenuItem>
                                  <MenuItem value={"Math"}>Math</MenuItem>

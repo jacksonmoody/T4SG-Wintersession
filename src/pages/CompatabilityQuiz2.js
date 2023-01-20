@@ -18,23 +18,23 @@ function CompatabilityQuiz2({ nextStep, handleChange }) {
       label: '9PM',
     },
     {
-      value: 20,
+      value: 2,
       label: '10PM',
     },
     {
-      value: 40,
+      value: 4,
       label: '11PM',
     },
     {
-      value: 60,
+      value: 6,
       label: '12AM',
     },
     {
-      value: 80,
+      value: 8,
       label: '1AM',
     },
     {
-      value: 100,
+      value: 10,
       label: '2AM',
     },
   ];
@@ -77,11 +77,11 @@ function CompatabilityQuiz2({ nextStep, handleChange }) {
           <Container sx={{ display: 'flex', justifyContent: 'center', p: 2, marginTop: 2, border: '4px solid black', borderRadius: '20px', }}>
             <Slider
               aria-label="Bedtime"
-              defaultValue={50}
+              defaultValue={5}
               valueLabelDisplay="auto"
               min={0}
-              max={100}
-              step={20}
+              max={10}
+              step={2}
               marks={marks}
               sx={{
                 color: 'black',
@@ -100,11 +100,11 @@ function CompatabilityQuiz2({ nextStep, handleChange }) {
           <Container sx={{ display: 'flex', justifyContent: 'center', p: 2, marginTop: 2, border: '4px solid black', borderRadius: '20px', }}>
             <Slider
               aria-label="Bedtime"
-              defaultValue={50}
+              defaultValue={5}
               valueLabelDisplay="auto"
               min={0}
-              max={100}
-              step={20}
+              max={10}
+              step={2}
               marks={marks}
               sx={{
                 color: 'black',
