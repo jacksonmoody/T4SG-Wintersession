@@ -2,9 +2,6 @@ import ResultsTable from '../components/ResultsTable';
 import algorithm from '../helpers/algorithm';
 import React from 'react';
 import arrayToString from '../helpers/arrayToString';
-import UserCard from '../components/UserCard';
-import { Grid, Card } from '@mui/material';
-import '../styling/Results.css'; 
 
 function Results(props) {
     const headers = ["Name", "Email", "Description", "Clubs", "Gender", "Number of Blockmates", "Concentration", "Cleanliness", "Sleep Time", "Hobbies", "Room Loudness", "Looking for Group?", "Dorm", "Type of Person", "Compatibility Score"];
@@ -17,11 +14,16 @@ function Results(props) {
         users = props.users;
     }
 
+<<<<<<< HEAD
     const body = users.map((user) => ([user.name, user.image, user.email, user.description, arrayToString(user.clubs), user.gender, user.numBlockmates, user.intendedConcentrations, user.cleanlinessLevel, user.sleepTime, arrayToString(user.hobbies), user.roomLoudness, user.lookingForGroup, user.dorm, user.typeOfPerson, user.score]));
+=======
+    const body = users.map((user) => ([user.name, user.email, user.description, arrayToString(user.clubs), user.gender, user.numBlockmates, user.intendedConcentrations, user.cleanlinessLevel, user.sleepTime, arrayToString(user.hobbies), user.roomLoudness, user.lookingForGroup, user.dorm, user.typeOfPerson, user.score]));
+>>>>>>> main
 
-return (
+    return (
         <div className="Results">
             <h1>Results</h1>
+<<<<<<< HEAD
             <h2>
                 <span style={{marginLeft: "5px"}} role="img-results" aria-label="emoji">🧪</span> 
                 <span>View Your Matches</span> 
@@ -54,6 +56,9 @@ return (
                         </Card>
                     </Grid>
             </Grid>
+=======
+            <ResultsTable header = {headers} body = {body}/>
+>>>>>>> main
         </div>
     );
 }
