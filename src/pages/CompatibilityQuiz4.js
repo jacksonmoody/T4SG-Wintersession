@@ -29,39 +29,39 @@ function CompatabilityQuiz4({nextStep, handleChange}) {
         }}>
         <Typography align="center" variant="h3"> Compatability Quiz </Typography>
         <Typography align="center" variant="h5"> Q4: What type of person are you? </Typography>
-        <Box sx={{ width: 300, border: 2 }}>
-          <Slider
+        <Box sx={{ p: 4, width: 300, border: 2, marginTop: 3, marginBottom: 3 }}>
+          <Slider m = {2}
             aria-label="Custom marks"
             onChange={(e) => handleChange (e, "typeOfPerson")}
             defaultValue={50}
             step={1}
             marks={marks}
           />
-          <Typography align="center" variant="4"> Your Answer </Typography>
+          <Typography align="center" variant="h5"> Your Answer </Typography>
         </Box>
 
-        <Box sx={{ width: 300, border: 2 }}>
+        <Box sx={{ p: 4, width: 300, border: 2, marginBottom: 3 }}>
           <Slider
             aria-label="Custom marks"
             defaultValue={50}
             step={1}
             marks={marks}
           />
-          <Typography align="center" variant="4"> Preferred Blockmate Answer </Typography>
+          <Typography align="center" variant="h5"> Preferred Blockmate Answer </Typography>
         </Box>
 
-        <Typography align="center" variant="4"> Rate this question! </Typography>
+        <Typography align="center" variant="h4"> Rate this question! </Typography>
 
         <Box>
-          <Stack direction="row" spacing={5}>
+          <Stack direction="row" spacing={5} sx={{marginTop: 3}}>
             <Button variant="outlined" align="center" >Not Important</Button>
             <Button variant="outlined" align="center" >Important</Button>
             <Button variant="outlined" align="center" >Very Important</Button>
           </Stack>
         </Box>
 
-        <Stack direction="row" spacing={5}>
-          <Button onClick ={() => nextStep()} variant="outlined" align="center" justifyContent="center" alignItems="center" > Continue</Button>
+        <Stack direction="row" spacing={5} sx={{marginTop: 3}}>
+          <Button onClick ={() => nextStep()} variant="contained" align="center" justifyContent="center" alignItems="center" > Continue</Button>
         </Stack>
       </Box>
 
