@@ -1,0 +1,45 @@
+.user-name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.user-card {
+    padding: 20px;
+    box-shadow: 0px 0px 5px 0px #6495ed;
+}
+
+.user-info {
+    display:inline-block;
+    font-family: "Tahoma";
+    font-size: 12px;
+}
+
+.small-label {
+    width: 105px;
+    height: 28px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 10.5px !important;
+    box-sizing: border-box !important;
+    padding: 0px !important;
+    margin: 5px !important;
+    font-weight: bold;
+    font-family: "Tahoma", monospace !important;
+}
+
+.image-name-container {
+    display: flex;
+    align-items: center;
+}
+
+.user-image {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: auto;
+}
+
+.parent-container {
+    padding: 20px;
+}
