@@ -8,7 +8,7 @@ export default CompatabilityQuiz4;
 
 const marks = [
   {
-    value: 0,
+    value: 1,
     label: "Stay in"
   },
   {
@@ -17,7 +17,7 @@ const marks = [
   }
 ];
 
-function CompatabilityQuiz4({nextStep, handleChange}) {
+function CompatabilityQuiz4({ nextStep, handleChange }) {
   return (
     <Container component="main" maxWidth="s" >
       <Box
@@ -30,10 +30,12 @@ function CompatabilityQuiz4({nextStep, handleChange}) {
         <Typography align="center" variant="h3"> Compatability Quiz </Typography>
         <Typography align="center" variant="h5"> Q4: What type of person are you? </Typography>
         <Box sx={{ p: 4, width: 300, border: 2, marginTop: 3, marginBottom: 3 }}>
-          <Slider m = {2}
+          <Slider m={2}
             aria-label="Custom marks"
-            onChange={(e) => handleChange (e, "typeOfPerson")}
+            onChange={(e) => handleChange(e, "typeOfPerson")}
             defaultValue={5}
+            min={1}
+            max={10}
             step={1}
             marks={marks}
           />
@@ -44,6 +46,8 @@ function CompatabilityQuiz4({nextStep, handleChange}) {
           <Slider
             aria-label="Custom marks"
             defaultValue={5}
+            min={1}
+            max={10}
             step={1}
             marks={marks}
           />
@@ -53,15 +57,15 @@ function CompatabilityQuiz4({nextStep, handleChange}) {
         <Typography align="center" variant="h4"> Rate this question! </Typography>
 
         <Box>
-          <Stack direction="row" spacing={5} sx={{marginTop: 3}}>
+          <Stack direction="row" spacing={5} sx={{ marginTop: 3 }}>
             <Button variant="outlined" align="center" >Not Important</Button>
             <Button variant="outlined" align="center" >Important</Button>
             <Button variant="outlined" align="center" >Very Important</Button>
           </Stack>
         </Box>
 
-        <Stack direction="row" spacing={5} sx={{marginTop: 3}}>
-          <Button onClick ={() => nextStep()} variant="contained" align="center" justifyContent="center" alignItems="center" > Continue</Button>
+        <Stack direction="row" spacing={5} sx={{ marginTop: 3 }}>
+          <Button onClick={() => nextStep()} variant="contained" align="center" justifyContent="center" alignItems="center" > Continue</Button>
         </Stack>
       </Box>
 
