@@ -48,10 +48,12 @@ function InterestsForm({ nextStep, handleChange }) {
     {
         //Here you can concatenate the activities, entertainment, and sports arrays into a single array
         //Then pass this array into the handleChange function
+
+        const hobbiesArray = selectedActivities.concat(selectedEntertainment, selectedSports)
        
-        handleChange(selectedActivities, "hobbies");
+        handleChange(hobbiesArray, "hobbies");
         
-    }, [selectedActivities])
+    }, [selectedActivities, selectedEntertainment, selectedSports])
 
     return (
         <div className="compatibility"
@@ -121,8 +123,7 @@ function InterestsForm({ nextStep, handleChange }) {
                                 mb: 2,
                             }}
                             onChange={doChangeEntertainment}
-                            renderValue={(selectedEntertainment) => selectedEntertainment.join(', ')}
-                            label="Entertainment">
+                            renderValue={(selectedEntertainment) => selectedEntertainment.join(', ')}>
                             <MenuItem value={ entertainmentList[0] }>{ entertainmentList[0] }</MenuItem>
                             <MenuItem value={ entertainmentList[1] }>{ entertainmentList[1] }</MenuItem>
                             <MenuItem value={ entertainmentList[2] }>{ entertainmentList[2] }</MenuItem>
@@ -139,7 +140,6 @@ function InterestsForm({ nextStep, handleChange }) {
                             <MenuItem value={ entertainmentList[13] }>{ entertainmentList[13] }</MenuItem>
                             <MenuItem value={ entertainmentList[14] }>{ entertainmentList[14] }</MenuItem>
                             <MenuItem value={ entertainmentList[15] }>{ entertainmentList[15] }</MenuItem>
-
                         </Select>
                     </FormControl>
                     <Typography 
@@ -152,7 +152,8 @@ function InterestsForm({ nextStep, handleChange }) {
                             <Select
                                 labelId="Sports-Select"
                                 id="Sports"
-                                label="Sports"
+                                multiple
+                                value={selectedSports}
                                 sx={{
                                     p: 0,
                                     mb: 2,
