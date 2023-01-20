@@ -54,6 +54,16 @@ function Onboarding1({ users, currentUser, nextStep, handleChange, successAlert 
                         margin="normal"
                         required
                         fullWidth
+                        id="gender"
+                        label="What is your gender?"
+                        name="gender"
+                        autoComplete="gender"
+                        onChange={(e) => handleChange(e, "gender")}
+                    />
+                    <TextField
+                        margin="normal"
+                        required
+                        fullWidth
                         id="blockmates"
                         label="How many blockmates do you currently have?"
                         name="blockmates"
