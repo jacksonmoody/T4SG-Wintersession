@@ -7,7 +7,7 @@ function UserCard(props) {
             <div className="user-card">
                 <div className="user-name">{props.name}</div>
                 <div className='image-name-container'>
-                    <img src={props.image || 'https://randomuser.me/api/portraits/men/1.jpg'} className="user-image" alt={props.image} />
+                    <img src={props.image} className="user-image" alt={props.image} sx={{ borderRadius: '50%' }}/>
                 </div>
                 <br />
                 <Button
@@ -37,7 +37,7 @@ function UserCard(props) {
                 <br />
                 <Chip label="Sleep Time" component="div" className="small-label" /> <div className="user-info">{props.sleepTime}</div>
                 <br />
-                <Chip label="Hobbies" component="div" className="small-label" /> <div className="user-info">{props.description}</div>
+                <Chip label="Hobbies" component="div" className="small-label" /> <div className="user-info">{props.hobbies}</div>
                 <br />
                 <Chip label="Room Loudness" component="div" className="small-label" /> <div className="user-info">{props.roomLoudness}</div>
                 <br />
