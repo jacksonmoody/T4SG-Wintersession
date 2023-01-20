@@ -88,6 +88,7 @@ function CompatabilityQuiz2({ nextStep, handleChange }) {
                 width: '80%',
 
               }}
+              onChange={(e) => handleChange(e, "sleepTime")}
             >
             </Slider>
           </Container>
@@ -111,7 +112,6 @@ function CompatabilityQuiz2({ nextStep, handleChange }) {
                 width: '80%',
 
               }}
-              onChange={(e) => handleChange(e, "Bedtime")}
             >
             </Slider>
           </Container>
