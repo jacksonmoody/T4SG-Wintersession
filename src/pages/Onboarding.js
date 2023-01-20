@@ -5,7 +5,9 @@ import ClubsForm from "./ClubsForm";
 import AcademicInterest from "./AcademicInterest";
 import CompatibilityQuiz1 from "./CompatibilityQuiz1";
 import CompatabilityQuiz2 from "./CompatabilityQuiz2";
+import CompatibilityQuiz3 from "./CompatibilityQuiz3";
 import CompatabilityQuiz4 from "./CompatibilityQuiz4";
+import InterestsForm from "./InterestsForm";
 
 function Onboarding({ users, currentUser }) {
     const [step, setStep] = useState(1);
@@ -56,7 +58,7 @@ function Onboarding({ users, currentUser }) {
                 setSleepTime(e.target.value);
                 break;
             case "hobbies":
-                setHobbies(e.target.value);
+                setHobbies(e);
                 break;
             case "roomLoudness":
                 setRoomLoudness(e.target.value);
@@ -87,7 +89,7 @@ function Onboarding({ users, currentUser }) {
         }
 
         description ? user.description = description : user.description = "";
-        concentration ? user.intendedConcentrations = concentration : user.intendedConcentrations = "";
+        concentration ? user.intendedConcentrations = concentration : user.intendedConcentrations = "Unknown";
         clubs ? user.clubs = clubs : user.clubs = [];
         gender ? user.gender = gender : user.gender = "";
         currentBlockmates ? user.numBlockmates = currentBlockmates : user.numBlockmates = 0;
@@ -117,18 +119,27 @@ function Onboarding({ users, currentUser }) {
                 <CompatibilityQuiz1 nextStep={nextStep} handleChange={handleChange} />
             )
         case 4:
-            return(
+            return (
                 <CompatabilityQuiz2 nextStep={nextStep} handleChange={handleChange} />
             )
         case 5:
-            return(
-                <CompatabilityQuiz4 nextStep={nextStep} handleChange={handleChange} />
+            return (
+                <CompatibilityQuiz3 nextStep={nextStep} handleChange={handleChange} />
             )
         case 6:
-            return(
-                <ClubsForm nextStep={nextStep} handleChange={handleChange} />
+            return (
+                <CompatabilityQuiz4 nextStep={nextStep} handleChange={handleChange} />
             )
         case 7:
+            return (
+                <ClubsForm nextStep={nextStep} handleChange={handleChange} />
+            )
+        case 8:
+            return (
+                <InterestsForm nextStep={nextStep} handleChange={handleChange} />
+            )
+
+        case 9:
             return (
                 <SubmitToDatabase image={selectedImage} user={submit_onboarding()} />
             )
