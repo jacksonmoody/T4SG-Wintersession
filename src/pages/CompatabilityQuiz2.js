@@ -60,8 +60,8 @@ function CompatabilityQuiz2({ nextStep, handleChange }) {
             alignItems: 'center'
           }}
         >
-          <Typography component="h1" variant="h3" align="center">
-            COMPATABILITY QUIZ
+          <Typography component="h2" variant="h4" align="center" sx={{ fontWeight: 'bold', paddingBottom: 1 }}>
+            Compatibility Quiz
           </Typography>
 
           <Typography variant="h5" align="center" sx={{ fontWeight: 'bold', paddingBottom: 1 }}>

@@ -62,7 +62,7 @@ function CompatabilityQuiz4({ nextStep, handleChange }) {
           </Stack>
         </Box>
         <Stack direction="row" spacing={5} sx = {{marginTop: 3, marginBottom: 3}}>
-          <Button onClick={() => nextStep()} variant="outlined" align="center" justifyContent="center" alignItems="center" > Continue</Button>
+          <Button onClick={() => nextStep()} variant="contained" align="center" justifyContent="center" alignItems="center" > Continue</Button>
         </Stack>
       </Box>
     </Container>
