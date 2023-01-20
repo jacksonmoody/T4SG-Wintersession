@@ -12,7 +12,7 @@ const marks = [
     label: "Stay in"
   },
   {
-    value: 100,
+    value: 10,
     label: "Go out"
   }
 ];
@@ -33,7 +33,7 @@ function CompatabilityQuiz4({nextStep, handleChange}) {
           <Slider m = {2}
             aria-label="Custom marks"
             onChange={(e) => handleChange (e, "typeOfPerson")}
-            defaultValue={50}
+            defaultValue={5}
             step={1}
             marks={marks}
           />
@@ -43,7 +43,7 @@ function CompatabilityQuiz4({nextStep, handleChange}) {
         <Box sx={{ p: 4, width: 300, border: 2, marginBottom: 3 }}>
           <Slider
             aria-label="Custom marks"
-            defaultValue={50}
+            defaultValue={5}
             step={1}
             marks={marks}
           />
