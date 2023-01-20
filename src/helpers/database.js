@@ -2,8 +2,8 @@ import { db } from './firebase';
 import { setDoc, doc, updateDoc, deleteDoc } from "firebase/firestore";
 
 export async function addUser(uid, name, authProvider, email, onboarded = false, description = "", image = "",
- clubs = [], gender = "", numBlockmates = 0, intendedConcentrations = [], cleanlinessLevel = 0, sleepTime = 0, hobbies = [], roomLoudness = 0, 
- lookingForGroup = false, dorm = "", typeOfPerson = "") {
+ clubs = [], gender = "", numBlockmates = 0, intendedConcentrations = "", cleanlinessLevel = 0, sleepTime = 0, hobbies = [], roomLoudness = 0, 
+ lookingForGroup = false, dorm = "", typeOfPerson = 0) {
    await setDoc(doc(db, "users", uid), {
       uid: uid,
       name: name,
