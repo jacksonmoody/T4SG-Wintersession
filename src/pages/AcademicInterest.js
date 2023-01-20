@@ -34,17 +34,17 @@ function AcademicInterest({nextStep, handleChange}) {
                                      p: 0,
                                      mb: 2,
                                  }}
-                                 onChange={(e) => handleChange(e, "academic")}>
+                                 onChange={(e) => handleChange(e, "concentration")}>
                                  <MenuItem value={0}></MenuItem>
-                                 <MenuItem value={1}>Anthropology</MenuItem>
-                                 <MenuItem value={2}>Classics</MenuItem>
-                                 <MenuItem value={3}>Computer Science</MenuItem>
-                                 <MenuItem value={4}>Economics</MenuItem>
-                                 <MenuItem value={5}>History</MenuItem>
-                                 <MenuItem value={6}>Government</MenuItem>
-                                 <MenuItem value={7}>Math</MenuItem>
-                                 <MenuItem value={8}>Physics</MenuItem>
-                                 <MenuItem value={9}>Biology</MenuItem>
+                                 <MenuItem value={"Anthropology"}>Anthropology</MenuItem>
+                                 <MenuItem value={"Classics"}>Classics</MenuItem>
+                                 <MenuItem value={"Computer Science"}>Computer Science</MenuItem>
+                                 <MenuItem value={"Economics"}>Economics</MenuItem>
+                                 <MenuItem value={"History"}>History</MenuItem>
+                                 <MenuItem value={"Government"}>Government</MenuItem>
+                                 <MenuItem value={"Math"}>Math</MenuItem>
+                                 <MenuItem value={"Physics"}>Physics</MenuItem>
+                                 <MenuItem value={"Biology"}>Biology</MenuItem>
                              </Select>
                      </FormControl>
                      <Button variant="contained" sx={{width: '50%', backgroundColor:'black'}} onClick={() => nextStep()}>
