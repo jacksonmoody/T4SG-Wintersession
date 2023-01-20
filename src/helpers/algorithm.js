@@ -18,7 +18,7 @@ function algorithm(currentUser, users) {
                         }
                         user.score += 1;
                     }
-
+                    
                 }
                 else if (typeof currentUser[preferences[i]] == "string") {
                     if (currentUser[preferences[i]] !== user[preferences[i]]) {
@@ -30,9 +30,6 @@ function algorithm(currentUser, users) {
                     const difference = Math.abs(currentUser[preferences[i]] - user[preferences[i]]);
                     user.score += difference;
                 }
-            }
-            if (user.numBlockmates + currentUser.numBlockmates > 8) {
-                user.score += 1000;
             }
         }
     )
