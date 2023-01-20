@@ -6,6 +6,7 @@
 .user-card {
     padding: 20px;
     box-shadow: 0px 0px 5px 0px #6495ed;
+    margin: 5px !important;
 }
 
 .user-info {
