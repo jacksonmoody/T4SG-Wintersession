@@ -7,7 +7,7 @@ import Collapse from "@mui/material/Collapse";
 import Alert from "@mui/material/Alert";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-function Onboarding1({ users, currentUser, nextStep, handleChange, successAlert}) {
+function Onboarding1({ users, currentUser, nextStep, handleChange, successAlert }) {
 
     let theUsers;
     let user;
@@ -17,7 +17,7 @@ function Onboarding1({ users, currentUser, nextStep, handleChange, successAlert}
         theUsers = users.filter((user) => (user.uid === currentUser.uid));
         user = theUsers[0];
         name = user.name;
-    } catch(e) {
+    } catch (e) {
         return null;
     }
 
@@ -50,6 +50,16 @@ function Onboarding1({ users, currentUser, nextStep, handleChange, successAlert}
                         rows={3}
                         onChange={(e) => handleChange(e, "description")}
                     />
+                    <TextField
+                        margin="normal"
+                        required
+                        fullWidth
+                        id="blockmates"
+                        label="How many blockmates do you currently have?"
+                        name="blockmates"
+                        autoComplete="blockmates"
+                        onChange={(e) => handleChange(e, "currentBlockmates")}
+                    />
                     <Collapse in={successAlert}>
                         <Alert>
                             Image upload success!
@@ -78,7 +88,7 @@ function Onboarding1({ users, currentUser, nextStep, handleChange, successAlert}
                         sx={{ mt: 3, mb: 1 }}
                         onClick={() => nextStep()}
                     >
-                        Continue 
+                        Continue
                     </Button>
                 </Box>
             </Box>
