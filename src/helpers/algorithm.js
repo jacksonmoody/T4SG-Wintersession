@@ -32,6 +32,13 @@ function algorithm(currentUser, users) {
         }
     )
     users.sort((a, b) => a.score - b.score);
+
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].uid == currentUser.uid) {
+            users.splice(i, 1);
+        }
+    }
+
     return users;
 }
 
