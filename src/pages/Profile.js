@@ -2,6 +2,7 @@ import React from 'react';
 import "../styling/Profile.css";
 import Attribute from "../components/Attribute";
 import arrayToString from "../helpers/arrayToString";
+import { bedtimeConverter } from '../helpers/converters';
 
 function Profile(props) {
 
@@ -25,7 +26,7 @@ function Profile(props) {
             <div className="userinfo">
                 <h1>Living Habits</h1>
                 <Attribute name="Cleanliness" value={currentUser.cleanlinessLevel} />
-                <Attribute name="Bedtime" value={currentUser.sleepTime} />
+                <Attribute name="Bedtime" value={bedtimeConverter(currentUser.sleepTime)} />
                 <Attribute name="Room Loudness" value={currentUser.roomLoudness} />
                 <Attribute name="Person Type" value={currentUser.typeOfPerson} />
             </div>
