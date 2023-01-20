@@ -25,7 +25,7 @@ function Results(props) {
         lookingForGroup: true,
         dorm: 'Thayer',
         typeOfPerson: 'Stay in'
-    }]
+    }}
 
     const body = users.map((user) => ([user.name, user.email, user.description, arrayToString(user.clubs), user.gender, user.numBlockmates, arrayToString(user.intendedConcentrations), user.cleanlinessLevel, user.sleepTime, arrayToString(user.hobbies), user.roomLoudness, user.lookingForGroup, user.dorm, user.typeOfPerson]));
 
