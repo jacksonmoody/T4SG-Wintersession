@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 function InterestsForm({ nextStep, handleChange }) {
 
     const activitieslist = ["Painting", "Photography", "Sculpture", "Drawing", "Singing", "Dancing", 
-    "Acting", "Writing", "Gardening", "Cooking", "Knitting", "Knitting", "Gaming"]
+    "Acting", "Writing", "Gardening", "Cooking", "Knitting", "Gaming"]
 
     const entertainmentList = ["Action", "Comedy", "Drama", "Science Fiction",
      "Horror", "Romance", "Thriller", "Mystery", "Adventure", 
