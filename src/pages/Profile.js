@@ -15,7 +15,8 @@ function Profile(props) {
                 <div className="userinfo">
                     <img alt="Profile" id="profilePicture" src = { currentUser.image }></img>
                     <h1 id="name"> { currentUser.name }</h1>
-                    <h2 id="concentration"> { arrayToString(currentUser.concentrations)} </h2>
+                    <h2 id="concentration"> { currentUser.intendedConcentrations + " Concentrator"} </h2>
+                    <br></br>
                     <Attribute name = "Number of Current Blockmates" value = { currentUser.numberOfBlockmates} />
                     <Attribute name = "Status" value = { status } />
                 </div>
