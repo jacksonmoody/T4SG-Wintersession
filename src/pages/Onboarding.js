@@ -49,7 +49,7 @@ function Onboarding({ users, currentUser }) {
             case "currentBlockmates":
                 setCurrentBlockMates(parseInt(e.target.value));
                 break;
-            case "cleanliness":
+            case "cleanlinessLevel":
                 setCleanliness(e.target.value);
                 break;
             case "sleepTime":
