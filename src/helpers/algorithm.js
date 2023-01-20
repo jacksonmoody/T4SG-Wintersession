@@ -9,18 +9,20 @@ function algorithm(currentUser, users) {
                     const length2 = user[preferences[i]].length;
 
                     for (let j = 0; j < length1; j++) {
+                        const currentUserArray = currentUser[preferences[i]];
+                        const otherUserArray = user[preferences[i]];
                         for (let k = 0; k < length2; k++) {
-                            if (currentUser[preferences[i][j]] == user[preferences[i][k]]) {
-                                user.score += -1;
+                            if (currentUserArray[j] === otherUserArray[k]) {
+                                user.score += -10;
                             }
                         }
                         user.score += 1;
                     }
                     
                 }
-                if (typeof currentUser[preferences[i]] == "string") {
-                    if (currentUser[preferences[i]] != user[preferences[i]]) {
-                        user.score += 5;
+                else if (typeof currentUser[preferences[i]] == "string") {
+                    if (currentUser[preferences[i]] !== user[preferences[i]]) {
+                        user.score += 10;
                     }
                 }
 
@@ -34,7 +36,7 @@ function algorithm(currentUser, users) {
     users.sort((a, b) => a.score - b.score);
 
     for (let i = 0; i < users.length; i++) {
-        if (users[i].uid == currentUser.uid) {
+        if (users[i].uid === currentUser.uid) {
             users.splice(i, 1);
         }
     }
