@@ -6,7 +6,7 @@ function CreateProfile(props) {
             <div>Welcome! To begin the process, you must first sign-up for an account. 
                <ol>
                     <li>Fill out the questionnaire </li>
-                    <li>Click the top right corner of the screen on the user icon. </li>
+                    <li>Click the top right corner of the screen on the profile page. </li>
                     <li>Edit your information such as including a profile picture. </li>
                     <li>Once you have finished filling out your information, scroll down to the bottom of the screen. </li>
                 </ol>
