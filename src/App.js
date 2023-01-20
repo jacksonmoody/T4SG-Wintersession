@@ -14,7 +14,6 @@ import Layout from "./pages/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { addUser } from "./helpers/database";
 import React from 'react';
-import CompatibilityQuiz1 from "./pages/CompatibilityQuiz1";
 
 export default function App() {
 
@@ -97,7 +96,6 @@ export default function App() {
                     }
                     />
                     <Route path="*" element={<ErrorPage />} />
-                    <Route path="compatibility-quiz-1" element={<CompatibilityQuiz1 />} />
                 </Route>
             </Routes>
         </BrowserRouter>

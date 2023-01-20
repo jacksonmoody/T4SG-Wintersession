@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Box } from "@mui/material";
 import { Button } from "@mui/material";
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 
@@ -18,12 +17,6 @@ function CompatibilityQuiz1 ({ nextStep, handleChange }) {
     const handleChange2 = (event, newValue) => {
         setValue2(newValue);
     };
-
-    const location = useLocation();
-
-    function handleContinue() {
-        location.pathname === '/' ? location.push("/") : location.push("/");
-    }
 
     return (
         <Grid container justify="center" alignItems="center" direction="column">
