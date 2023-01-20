@@ -29,7 +29,7 @@ function CompatabilityQuiz4({nextStep, handleChange}) {
         }}>
         <Typography align="center" variant="h3"> Compatability Quiz </Typography>
         <Typography align="center" variant="h5"> Q4: What type of person are you? </Typography>
-        <Box sx={{ width: 200, border: 2 }}>
+        <Box sx={{ width: 300, border: 2 }}>
           <Slider
             aria-label="Custom marks"
             onChange={(e) => handleChange (e, "typeOfPerson")}
@@ -40,7 +40,7 @@ function CompatabilityQuiz4({nextStep, handleChange}) {
           <Typography align="center" variant="4"> Your Answer </Typography>
         </Box>
 
-        <Box sx={{ width: 200, border: 2 }}>
+        <Box sx={{ width: 300, border: 2 }}>
           <Slider
             aria-label="Custom marks"
             defaultValue={50}
