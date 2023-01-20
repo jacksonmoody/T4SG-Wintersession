@@ -24,7 +24,7 @@ function Profile(props) {
                     <Attribute name = "Cleanliness" value = {currentUser.cleanliness} />
                     <Attribute name = "Bedtime" value = { currentUser.bedtime } />
                     <Attribute name = "Room Loudness" value =  { currentUser.loudness } />
-                    <Attribute name = "Person Type" value = { currentUser.personType } />
+                    <Attribute name = "Person Type" value = { currentUser.typeOfPerson } />
                 </div>
                 <div className="userinfo">
                     <h1>Interests</h1>
