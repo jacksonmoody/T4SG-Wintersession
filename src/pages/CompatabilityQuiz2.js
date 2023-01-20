@@ -100,7 +100,7 @@ function CompatabilityQuiz2({ nextStep, handleChange }) {
           <Container sx={{ display: 'flex', justifyContent: 'center', p: 2, marginTop: 2, border: '4px solid black', borderRadius: '20px', }}>
             <Slider
               aria-label="Bedtime"
-              defaultValue={5}
+              defaultValue={50}
               valueLabelDisplay="auto"
               min={0}
               max={10}
@@ -111,7 +111,7 @@ function CompatabilityQuiz2({ nextStep, handleChange }) {
                 width: '80%',
 
               }}
-              onChange={(e) => handleChange(e, "sleepTime")}
+              onChange={(e) => handleChange(e, "Bedtime")}
             >
             </Slider>
           </Container>
