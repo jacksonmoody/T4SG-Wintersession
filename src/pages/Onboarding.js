@@ -41,7 +41,6 @@ function Onboarding({ users, currentUser }) {
                 break;
             case "clubs":
                 setClubs(e);
-                console.log(e);
                 break;
             case "gender":
                 setGender(e.target.value);
