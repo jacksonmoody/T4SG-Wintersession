@@ -1,4 +1,4 @@
-import {Container, Typography, Box, Select, MenuItem, OutlinedInput, InputLabel, FormControl, Button} from "@mui/material";
+import {Container, Typography, Box, Select, MenuItem, FormControl, Button} from "@mui/material";
 import React from "react";
 
 function AcademicInterest({nextStep, handleChange}) {
