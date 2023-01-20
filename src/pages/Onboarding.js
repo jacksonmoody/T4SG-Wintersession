@@ -46,7 +46,7 @@ function Onboarding({ users, currentUser }) {
                 setGender(e.target.value);
                 break;
             case "currentBlockmates":
-                setCurrentBlockMates(e.target.value);
+                setCurrentBlockMates(parseInt(e.target.value));
                 break;
             case "cleanliness":
                 setCleanliness(e.target.value);

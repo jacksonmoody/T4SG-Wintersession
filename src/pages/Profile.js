@@ -17,14 +17,14 @@ function Profile(props) {
                     <h1 id="name"> { currentUser.name }</h1>
                     <h2 id="concentration"> { currentUser.intendedConcentrations + " Concentrator"} </h2>
                     <br></br>
-                    <Attribute name = "Number of Current Blockmates" value = { currentUser.numberOfBlockmates} />
+                    <Attribute name = "Number of Current Blockmates" value = { currentUser.numBlockmates} />
                     <Attribute name = "Status" value = { status } />
                 </div>
                 <div className="userinfo">
                     <h1>Living Habits</h1>
-                    <Attribute name = "Cleanliness" value = {currentUser.cleanliness} />
-                    <Attribute name = "Bedtime" value = { currentUser.bedtime } />
-                    <Attribute name = "Room Loudness" value =  { currentUser.loudness } />
+                    <Attribute name = "Cleanliness" value = {currentUser.cleanlinessLevel} />
+                    <Attribute name = "Bedtime" value = { currentUser.sleepTime } />
+                    <Attribute name = "Room Loudness" value =  { currentUser.roomLoudness } />
                     <Attribute name = "Person Type" value = { currentUser.typeOfPerson } />
                 </div>
                 <div className="userinfo">
